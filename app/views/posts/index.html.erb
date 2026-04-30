@@ -1,0 +1,19 @@
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-8 mx-auto mt-4">
+      <div class="card">
+        <div class="card-header">
+          <%= link_to post.title, post_path(post) %>
+        </div>
+        <div class="card-body">
+          <%= post.article %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Güncelle", edit_post_path(post), class: "btn btn-outline-warning btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- Sayfalarınızı istediğiniz şekilde tasarlayabilirsiniz. Bu kod bir örnektir. -->
