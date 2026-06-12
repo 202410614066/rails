@@ -1,9 +1,12 @@
 <h1>Posts</h1>
 
+<%= link_to "Yeni Post Oluştur", new_post_path %>
+
 <% @posts.each do |post| %>
   <%= post.title %><br/>
   <%= post.article %><br/>
   <%= post.status %><br/>
   <%= link_to "Görüntüle", post_path(post) %>
   <hr>
+
 <% end %>
