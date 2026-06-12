@@ -6,8 +6,10 @@
   <%= post.title %><br/>
   <%= post.article %><br/>
   <%= post.status %><br/>
-  <%= link_to "Görüntüle", post_path(post) %>
+
+  <%= link_to "Görüntüle", post_path(post) %> |
+  <%= link_to "Güncelle", edit_post_path(post) %> |
+  <%= button_to "Sil", post, method: :delete, data: { turbo_confirm: "Emin misin?" } %>
+
   <hr>
-   
-  <%= link_to "Güncelle", edit_post_path(post) %>
 <% end %>
