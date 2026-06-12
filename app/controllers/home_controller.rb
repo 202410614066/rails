@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  def about; end
+  def about
+  end
 
-  def project; end
+  def projects
+  end
 end

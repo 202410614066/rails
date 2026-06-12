@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
   <div class="container">
-    <%= link_to "Blog App", posts_path, class: "navbar-brand" %>
+    <%= link_to "Blog App", root_path, class: "navbar-brand" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
       <span class="navbar-toggler-icon"></span>
@@ -10,6 +10,9 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <%= link_to "Posts", posts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Projelerim", projects_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Hakkımda", about_path, class: "nav-link" %>
