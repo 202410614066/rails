@@ -1,0 +1,14 @@
+<h1><%= form_title %></h1>
+
+<%= form_with model: post do |form| %>
+  <%= form.label :title, "Post Başlığı" %>
+  <%= form.text_field :title %><br/>
+
+  <%= form.label :article, "Post Metni" %>
+  <%= form.text_area :article %><br/>
+
+  <%= form.label :status, "Post Durumu" %>
+  <%= form.select(:status, Post.statuses.keys) %><br/>
+
+  <%= form.submit %>
+<% end %>

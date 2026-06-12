@@ -1,14 +1,3 @@
-<%= form_with model: @post do |form| %>
+<%= render "form", post: @post, form_title: "Yeni Post Ekle" %>
 
-  <%= form.label :title, "Post Başlığı" %>
-  <%= form.text_field :title %><br/>
-
-  <%= form.label :article, "Post Metni" %>
-  <%= form.text_area :article %><br/>
-
-  <%= form.label :status, "Post Durumu" %>
-  <%= form.select(:status, Post.statuses.keys) %><br/>
-
-  <%= form.submit %>
-
-<% end %>
+<%= link_to "Geri", posts_path %>
