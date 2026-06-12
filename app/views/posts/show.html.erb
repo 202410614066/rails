@@ -1,20 +1,28 @@
-<p>
-  <strong>Başlık:</strong>
-  <%= @post.title %>
-</p>
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h4><%= @post.title %></h4>
+      </div>
 
-<p>
-  <strong>Metin:</strong>
-  <%= @post.article %>
-</p>
+      <div class="card-body">
+        <div class="text-center mb-3">
+          <span class="badge bg-success"><%= @post.status %></span>
+        </div>
 
-<p>
-  <strong>Durum:</strong>
-  <%= @post.status %>
-</p>
+        <hr>
 
-<%= link_to "Post Güncelle", edit_post_path(@post) %>
+        <p><%= @post.article %></p>
+      </div>
 
-<%= button_to "Sil", @post, method: :delete, data: { turbo_confirm: "Emin misin?" } %>
+      <div class="card-footer d-flex justify-content-between">
+        <div>
+          <%= link_to "Geri", posts_path, class: "btn btn-secondary btn-sm" %>
+          <%= link_to "Güncelle", edit_post_path(@post), class: "btn btn-warning btn-sm" %>
+        </div>
 
-<%= link_to "Geri", posts_path %>
+        <%= button_to "Sil", @post, method: :delete, data: { turbo_confirm: "Emin misin?" }, class: "btn btn-danger btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>
