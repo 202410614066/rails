@@ -8,6 +8,10 @@
       <div class="card-body">
         <div class="text-center mb-3">
           <span class="badge bg-success"><%= @post.status %></span>
+
+          <% @post.categories.each do |category| %>
+            <span class="badge bg-primary"><%= category.name %></span>
+          <% end %>
         </div>
 
         <hr>

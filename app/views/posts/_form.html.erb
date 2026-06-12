@@ -23,6 +23,11 @@
             <%= form.select :status, Post.statuses.keys, {}, class: "form-select" %>
           </div>
 
+          <div class="mb-3">
+            <%= form.label :category_ids, "Kategoriler", class: "form-label" %>
+            <%= form.select :category_ids, Category.all.collect { |c| [c.name, c.id] }, {}, class: "form-select", multiple: true %>
+          </div>
+
           <div class="text-center">
             <%= form.submit "Kaydet", class: "btn btn-success" %>
           </div>
