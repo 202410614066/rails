@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   enum :status, { draft: 0, published: 1, inactive: 2 }
 
   has_and_belongs_to_many :categories
