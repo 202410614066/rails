@@ -8,13 +8,12 @@ Rails.application.routes.draw do
 
   scope ":user_id", as: "user" do
     resource :profile, only: [:new, :create, :show, :edit, :update]
+    resources :posts
   end
-
-  resources :posts
 
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
   end
 
-  root "posts#index"
+  root "home#index"
 end

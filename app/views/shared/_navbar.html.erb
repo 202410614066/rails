@@ -8,9 +8,11 @@
 
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <%= link_to "Posts", posts_path, class: "nav-link" %>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Yazılarım", user_posts_path(current_user), class: "nav-link" %>
+          </li>
+        <% end %>
 
         <li class="nav-item">
           <%= link_to "Kategoriler", categories_path, class: "nav-link" %>
@@ -28,7 +30,7 @@
 
             <ul class="dropdown-menu">
               <li>
-                <%= link_to "Yeni Post Oluştur", new_post_path, class: "dropdown-item" %>
+                <%= link_to "Yeni Post Oluştur", new_user_post_path(current_user), class: "dropdown-item" %>
               </li>
               <li>
                 <%= link_to "Yeni Kategori Oluştur", new_category_path, class: "dropdown-item" %>

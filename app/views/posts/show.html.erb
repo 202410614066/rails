@@ -7,6 +7,7 @@
 
       <div class="card-header">
         <h4><%= @post.title %></h4>
+        <small class="text-muted">Yazar: <%= @post.user.fullname %></small>
       </div>
 
       <div class="card-body">
@@ -25,11 +26,16 @@
 
       <div class="card-footer d-flex justify-content-between">
         <div>
-          <%= link_to "Geri", posts_path, class: "btn btn-secondary btn-sm" %>
-          <%= link_to "Güncelle", edit_post_path(@post), class: "btn btn-warning btn-sm" %>
+          <%= link_to "Geri", user_posts_path(@user), class: "btn btn-secondary btn-sm" %>
+
+          <% if user_signed_in? && current_user == @post.user %>
+            <%= link_to "Güncelle", edit_user_post_path(@post.user, @post), class: "btn btn-warning btn-sm" %>
+          <% end %>
         </div>
 
-        <%= button_to "Sil", @post, method: :delete, data: { turbo_confirm: "Emin misin?" }, class: "btn btn-danger btn-sm" %>
+        <% if user_signed_in? && current_user == @post.user %>
+          <%= button_to "Sil", user_post_path(@post.user, @post), method: :delete, data: { turbo_confirm: "Emin misin?" }, class: "btn btn-danger btn-sm" %>
+        <% end %>
       </div>
     </div>
   </div>
