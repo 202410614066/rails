@@ -4,7 +4,12 @@
       <%= link_to t(".home"), root_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
       <%= link_to t(".categories"), categories_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
       <%= link_to t(".projects"), projects_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
-      <%= link_to t(".about"), about_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+
+      <% if user_signed_in? %>
+        <%= link_to t(".about"), user_profile_path(current_user, locale: I18n.locale), class: "text-decoration-none me-3" %>
+      <% else %>
+        <%= link_to t(".about"), about_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+      <% end %>
 
       <%= link_to "🇹🇷", url_for(locale: :tr), class: "text-decoration-none me-2" %>
       <%= link_to "🇺🇸", url_for(locale: :en), class: "text-decoration-none" %>
