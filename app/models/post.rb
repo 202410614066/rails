@@ -6,10 +6,10 @@ class Post < ApplicationRecord
 
   has_and_belongs_to_many :categories
   has_one_attached :image
+  has_rich_text :article
 
   normalizes :title, with: -> title { title.squish.titlecase }
 
   validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
-  validates :article, presence: true, length: { maximum: 65_535 }
   validates :status, inclusion: { in: statuses.keys }
 end
