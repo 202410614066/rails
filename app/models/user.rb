@@ -6,6 +6,8 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
+  has_many :posts, dependent: :destroy
+
   enum :gender, {
     secret: 0,
     male: 1,
