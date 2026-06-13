@@ -66,3 +66,5 @@ group :test do
 end
 
 gem 'friendly_id', '~> 5.7'
+
+gem "devise", "~> 5.0"
