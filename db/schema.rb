@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_13_161203) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_13_161757) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_13_161203) do
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
+    t.integer "role", default: 1
     t.string "slug"
     t.datetime "updated_at", null: false
     t.string "username"

@@ -12,6 +12,11 @@ class User < ApplicationRecord
     female: 2
   }
 
+  enum :role, {
+    editor: 1,
+    admin: 2
+  }
+
   normalizes :firstname, with: -> firstname { firstname.squish.titlecase }
   normalizes :lastname, with: -> lastname { lastname.squish.titlecase }
 
@@ -20,6 +25,7 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 32 }, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :gender, inclusion: { in: genders.keys }
+  validates :role, inclusion: { in: roles.keys }
 
   def fullname
     "#{firstname} #{lastname}"
