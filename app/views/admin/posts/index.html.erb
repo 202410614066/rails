@@ -1,0 +1,31 @@
+<h1 class="mb-4">Tüm Postlar</h1>
+
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped align-middle">
+      <thead>
+        <tr>
+          <th>Başlık</th>
+          <th>Yazar</th>
+          <th>Durum</th>
+          <th>Oluşturulma</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.user.fullname %></td>
+            <td><span class="badge bg-success"><%= post.status %></span></td>
+            <td><%= post.created_at.strftime("%d.%m.%Y") %></td>
+            <td>
+              <%= link_to "Görüntüle", user_post_path(post.user, post), class: "btn btn-sm btn-info" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
