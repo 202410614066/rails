@@ -7,6 +7,7 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
 
   has_many :posts, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   enum :gender, {
     secret: 0,
