@@ -1,0 +1,11 @@
+en:
+  actions:
+    name: Actions
+    back: Back
+    destroy: Destroy
+    edit: Edit
+    new: New
+    reset: Reset
+    search: Search
+    show: Show
+    update: Update

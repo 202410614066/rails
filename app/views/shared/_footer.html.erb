@@ -1,10 +1,13 @@
 <footer class="footer bg-light py-3 mt-auto border-top">
   <div class="container text-center">
     <div class="mb-2">
-      <%= link_to "Anasayfa", root_path, class: "text-decoration-none me-3" %>
-      <%= link_to "Kategoriler", categories_path, class: "text-decoration-none me-3" %>
-      <%= link_to "Projelerim", projects_path, class: "text-decoration-none me-3" %>
-      <%= link_to "Hakkımda", about_path, class: "text-decoration-none" %>
+      <%= link_to t(".home"), root_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+      <%= link_to t(".categories"), categories_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+      <%= link_to t(".projects"), projects_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+      <%= link_to t(".about"), about_path(locale: I18n.locale), class: "text-decoration-none me-3" %>
+
+      <%= link_to "🇹🇷", url_for(locale: :tr), class: "text-decoration-none me-2" %>
+      <%= link_to "🇺🇸", url_for(locale: :en), class: "text-decoration-none" %>
     </div>
 
     <span class="text-muted">© <%= Date.current.year %> Blog App. Tüm hakları saklıdır.</span>

@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+    attributes:
+      post:
+        article: Post Article
+        category: Post Category
+        category_ids: Categories
+        image: Post Image
+        status: Post Status
+        title: Post Title
+    enums:
+      post:
+        statuses:
+          draft: Draft
+          published: Published
+          inactive: Inactive

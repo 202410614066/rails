@@ -1,0 +1,11 @@
+tr:
+  actions:
+    name: İşlemler
+    back: Geri
+    destroy: Sil
+    edit: Düzenle
+    new: Ekle
+    reset: Sıfırla
+    search: Ara
+    show: Görüntüle
+    update: Güncelle
